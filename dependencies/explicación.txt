@@ -1,8 +1,0 @@
-Aqui vamos a poner todos los archivos que hagan funciones aparte del archivo Main ubicado en ./main/Main.java
-
-por ejemplo, si necesitaramos hacer una clase elevador y elevador manager, las meteríamos aqui para no tener una maraña de archivos.
-
-tambien tengo entendido que hay que hacer una interfaz grafica, entonces eso va a ir en su carpeta aparte dentro de este directorio tmb.
-
-
-Eso seria todo por ahora, cualquier otra cosa que s enmo svaya ocurriendo lo veremos en la reunion.
