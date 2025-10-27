@@ -5,47 +5,53 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.logging.Logger;
 
 public class ElevatorManager implements Runnable {
-    private final List<Elevator> elevadores;
-    private final ConfigSimulador config;
-    private final Logger logger;
-    private final Queue<ComandoElevador> requests = new ConcurrentLinkedQueue<>();
+    private List<Elevator> listaElevadores;
+    private ConfigSimulador config;
+    private Logger lg;
+    private Queue<ComandoElevador> requests = new ConcurrentLinkedQueue<>();
 
-    public ElevatorManager(List<Elevator> elevadores, ConfigSimulador config) {
-        this.elevadores = elevadores;
+    public ElevatorManager(List<Elevator> listaElevadores, ConfigSimulador config) {
+        this.listaElevadores = listaElevadores;
         this.config = config;
-        this.logger = LoggerFunciones.crearLogger("manager");
+        this.lg = LoggerFunciones.LogAcciones("manager");
     }
 
     public void agregarRequest(ComandoElevador cmd) {
         requests.offer(cmd);
-        logger.info("[Manager] Nueva solicitud: " + cmd);
+        lg.info("[Manager] Nueva solicitud: " + cmd);
     }
 
     public void asignarElevador(int piso, String direccion) {
         Elevator elegido = elegirElevador(piso, direccion);
         if (elegido != null) {
+
             elegido.agregarComando(piso);
-            logger.info("[Manager] Asignado elevador " + elegido.getId() + " al piso " + piso);
+            lg.info("[Manager] Asignado elevador " + elegido.getId() + " al piso " + piso);
+            
         }
     }
 
     private Elevator elegirElevador(int piso, String direccion) {
-        Elevator mejor = null;
-        int menorDistancia = Integer.MAX_VALUE;
+        Elevator mejorElevador = null;
+        int menorDistancia = 1000;
 
-        for (Elevator e : elevadores) {
-            int distancia = Math.abs(e.getPisoActual() - piso);
-            if (distancia < menorDistancia) {
+        for (Elevator elv : getElevadores()) {
+            int distancia = elv.getPisoElevador() - piso;
+            
+            if (Math.abs(distancia) < menorDistancia) {
                 menorDistancia = distancia;
-                mejor = e;
+                mejorElevador = elv;
             }
         }
-        return mejor;
+        return mejorElevador;
     }
 
     public void resetSistema() {
-        logger.info("[Manager] Reset general solicitado");
-        for (Elevator e : elevadores) e.reset();
+        lg.info("[Manager] Reset general solicitado");
+
+        for (Elevator elv : listaElevadores) {
+            elv.reset();
+        }
     }
 
     @Override
@@ -57,5 +63,7 @@ public class ElevatorManager implements Runnable {
         }
     }
 
-    public List<Elevator> getElevadores() { return elevadores; }
+    public List<Elevator> getElevadores() { 
+        return listaElevadores; 
+    }
 }
