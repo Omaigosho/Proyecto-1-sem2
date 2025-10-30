@@ -1,16 +1,21 @@
 package dependencies.classes;
 
 public class ComandoElevador {
-    private final int piso;
-    private final String direccion;
+    private int piso;
+    private String direccion;
 
     public ComandoElevador(int piso, String direccion) {
         this.piso = piso;
         this.direccion = direccion;
     }
 
-    public int getPiso() { return piso; }
-    public String getDireccion() { return direccion; }
+    public int getPiso() { 
+        return piso; 
+    }
+
+    public String getDireccion() { 
+        return direccion; 
+    }
 
     @Override
     public String toString() {

@@ -1,10 +1,10 @@
 package dependencies.ui;
 
 import dependencies.classes.*;
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.List;
+import javax.swing.*;
 
 public class ElevatorUI extends JFrame {
     private final ElevatorManager manager;
@@ -24,7 +24,6 @@ public class ElevatorUI extends JFrame {
         statusArea.setEditable(false);
         add(new JScrollPane(statusArea), BorderLayout.CENTER);
 
-        // Panel inferior de control
         JPanel controls = new JPanel();
         JTextField pisoField = new JTextField(5);
         JComboBox<String> direccionBox = new JComboBox<>(new String[]{"up", "down"});
@@ -42,7 +41,9 @@ public class ElevatorUI extends JFrame {
 
         uploadBtn.addActionListener(e -> {
             List<ComandoElevador> cmds = CargaPeticiones.cargarDesdeArchivo("requests.txt");
-            for (ComandoElevador c : cmds) manager.agregarRequest(c);
+            for (ComandoElevador c : cmds) {
+                manager.agregarRequest(c);
+            }
         });
 
         controls.add(new JLabel("Piso:"));
@@ -54,7 +55,7 @@ public class ElevatorUI extends JFrame {
         controls.add(uploadBtn);
         add(controls, BorderLayout.SOUTH);
 
-        // Panel lateral: paneles internos de cada elevador
+        
         JPanel panelElevadores = new JPanel();
         panelElevadores.setLayout(new GridLayout(1, manager.getElevadores().size()));
         for (Elevator e : manager.getElevadores()) {
@@ -62,7 +63,6 @@ public class ElevatorUI extends JFrame {
         }
         add(panelElevadores, BorderLayout.EAST);
 
-        // Actualización periódica
         new Timer(1000, e -> actualizarEstado()).start();
     }
 

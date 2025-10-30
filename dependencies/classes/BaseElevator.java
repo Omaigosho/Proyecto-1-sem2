@@ -15,11 +15,11 @@ public abstract class BaseElevator implements Runnable {
         return id; 
     }
 
-    public int getPisoElevador() { 
+    public int getPisoActual() { 
         return pisoElevador; 
     }
 
-    public String getDireccionElevador() { 
+    public String getDireccion() { 
         return direccionElevador; 
     }
 }

@@ -5,7 +5,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.logging.Logger;
 
 public class Elevator extends BaseElevator {
-    
+
     private Queue<Integer> colaComandos = new ConcurrentLinkedQueue<>();
     private ConfigSimulador config;
     private Logger lg;
@@ -16,6 +16,17 @@ public class Elevator extends BaseElevator {
         this.direccionElevador = "up";
         this.config = config;
         this.lg = LoggerFunciones.LogAcciones("elevador" + id);
+    }
+    public Queue<Integer> getColaComandos() { 
+        return colaComandos; 
+    }
+
+    public int getPisoActual(){
+        return this.pisoElevador;
+    }
+
+    public String getDireccion(){
+        return this.direccionElevador;
     }
 
     @Override
@@ -37,9 +48,7 @@ public class Elevator extends BaseElevator {
         lg.info("[Elevador " + id + "] Elevador Reseteado");
     }
 
-    public Queue<Integer> getColaComandos() { 
-        return colaComandos; 
-    }
+    
 
     private void moverHacia(int destino) throws InterruptedException {
         int tiempoSleep = config.getTiempoMovimiento();
@@ -55,6 +64,7 @@ public class Elevator extends BaseElevator {
         while (pisoElevador != destino && isActive) {
             Thread.sleep(tiempoSleep);
 
+            //Lo hice con if normal para que lo pudieran ver más facil muchis
             if (direccionElevador.equals("up")){
                 pisoElevador +=1;
             } else {

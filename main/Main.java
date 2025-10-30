@@ -18,7 +18,8 @@ public class Main {
         List<Elevator> elevadores = new ArrayList<>();
         for (int i = 1; i <= numElevadores; i++) {
             Elevator e = new Elevator(i, config);
-            new Thread(e, "Elevator-" + i).start();
+            Thread elvTr = new Thread(e, "Elevator-" + i);
+            elvTr.start();
             elevadores.add(e);
         }
 

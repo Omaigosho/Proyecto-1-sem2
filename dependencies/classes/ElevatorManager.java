@@ -18,6 +18,8 @@ public class ElevatorManager implements Runnable {
 
     public void agregarRequest(ComandoElevador cmd) {
         requests.offer(cmd);
+
+        //Aca me tira que hay una concatenacion ineficiente pero no me importa, mientras funcione el log, safa cualquier cosa XD
         lg.info("[Manager] Nueva solicitud: " + cmd);
     }
 
@@ -36,7 +38,7 @@ public class ElevatorManager implements Runnable {
         int menorDistancia = 1000;
 
         for (Elevator elv : getElevadores()) {
-            int distancia = elv.getPisoElevador() - piso;
+            int distancia = elv.getPisoActual() - piso;
             
             if (Math.abs(distancia) < menorDistancia) {
                 menorDistancia = distancia;
@@ -58,8 +60,18 @@ public class ElevatorManager implements Runnable {
     public void run() {
         while (true) {
             ComandoElevador cmd = requests.poll();
-            if (cmd != null) asignarElevador(cmd.getPiso(), cmd.getDireccion());
-            try { Thread.sleep(500); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+
+            if (cmd != null) {
+                asignarElevador(cmd.getPiso(), cmd.getDireccion());
+            }
+
+            try { 
+
+                Thread.sleep(500); 
+
+            } catch (InterruptedException e) { 
+                Thread.currentThread().interrupt(); 
+            }
         }
     }
 
