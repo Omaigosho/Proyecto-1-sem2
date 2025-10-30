@@ -9,7 +9,7 @@ import javax.swing.*;
 public class ElevatorUI extends JFrame {
     private final ElevatorManager manager;
     private final ConfigSimulador config;
-    private final JTextArea statusArea;
+    private final JTextArea areaTexto;
 
     public ElevatorUI(ElevatorManager manager, ConfigSimulador config) {
         this.manager = manager;
@@ -20,16 +20,20 @@ public class ElevatorUI extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        statusArea = new JTextArea();
-        statusArea.setEditable(false);
-        add(new JScrollPane(statusArea), BorderLayout.CENTER);
+        areaTexto = new JTextArea();
+        areaTexto.setEditable(false);
+        add(new JScrollPane(areaTexto), BorderLayout.CENTER);
 
         JPanel controls = new JPanel();
         JTextField pisoField = new JTextField(5);
-        JComboBox<String> direccionBox = new JComboBox<>(new String[]{"up", "down"});
+        String[] dictDirectiones = new String[]{
+            "up", "down"
+        };
+
+        JComboBox<String> direccionBox = new JComboBox<>(dictDirectiones);
         JButton callBtn = new JButton("Llamar elevador");
-        JButton resetBtn = new JButton("Reset sistema");
-        JButton uploadBtn = new JButton("Cargar requerimientos");
+        JButton resetBtn = new JButton("Resetear sistema de elevadores");
+        JButton uploadBtn = new JButton("Cargar comandos");
 
         callBtn.addActionListener((ActionEvent e) -> {
             int piso = Integer.parseInt(pisoField.getText());
@@ -59,8 +63,14 @@ public class ElevatorUI extends JFrame {
         JPanel panelElevadores = new JPanel();
         panelElevadores.setLayout(new GridLayout(1, manager.getElevadores().size()));
         for (Elevator e : manager.getElevadores()) {
-            panelElevadores.add(new UIPanelElevador(e, config.getNumPisos()));
+
+            int numeroPisos = config.getNumPisos();
+
+            UIPanelElevador panel = new UIPanelElevador(e, numeroPisos);
+            panelElevadores.add(panel);
+
         }
+
         add(panelElevadores, BorderLayout.EAST);
 
         Timer estadoTimer = new Timer(500, e -> actualizarEstado());
@@ -73,8 +83,9 @@ public class ElevatorUI extends JFrame {
             sb.append("Elevador ").append(e.getId())
               .append(" | Piso: ").append(e.getPisoActual())
               .append(" | Dir: ").append(e.getDireccion())
+              //No entiendo porque no se imprime la cola pero si todo lo demas, ahi lo miras vos abi XDDDDD
               .append(" | Cola: ").append(e.getColaComandos()).append("\n");
         }
-        statusArea.setText(sb.toString());
+        areaTexto.setText(sb.toString());
     }
 }
