@@ -17,14 +17,17 @@ public class Elevator extends BaseElevator {
         this.config = config;
         this.lg = LoggerFunciones.LogAcciones("elevador" + id);
     }
+
     public Queue<Integer> getColaComandos() { 
         return colaComandos; 
     }
 
+    @Override
     public int getPisoActual(){
         return this.pisoElevador;
     }
 
+    @Override
     public String getDireccion(){
         return this.direccionElevador;
     }
@@ -70,6 +73,7 @@ public class Elevator extends BaseElevator {
             } else {
                 pisoElevador -=1;
             }
+            
             lg.info("[Elevador " + id + "] Piso actual: " + pisoElevador);
         }
 

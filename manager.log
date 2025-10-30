@@ -30,3 +30,9 @@ Oct 30, 2025 7:46:56 AM dependencies.classes.ElevatorManager agregarRequest
 INFO: [Manager] Nueva solicitud: Piso 2 (down)
 Oct 30, 2025 7:46:56 AM dependencies.classes.ElevatorManager asignarElevador
 INFO: [Manager] Asignado elevador 3 al piso 2
+Oct 30, 2025 8:02:59 AM dependencies.classes.ElevatorManager resetSistema
+INFO: [Manager] Reset general solicitado
+Oct 30, 2025 8:03:24 AM dependencies.classes.ElevatorManager agregarRequest
+INFO: [Manager] Nueva solicitud: Piso 3 (down)
+Oct 30, 2025 8:03:24 AM dependencies.classes.ElevatorManager asignarElevador
+INFO: [Manager] Asignado elevador 3 al piso 3

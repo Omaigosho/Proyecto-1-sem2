@@ -63,7 +63,8 @@ public class ElevatorUI extends JFrame {
         }
         add(panelElevadores, BorderLayout.EAST);
 
-        new Timer(1000, e -> actualizarEstado()).start();
+        Timer estadoTimer = new Timer(500, e -> actualizarEstado());
+        estadoTimer.start();
     }
 
     private void actualizarEstado() {
