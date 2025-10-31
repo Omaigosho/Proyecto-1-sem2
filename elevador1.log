@@ -430,3 +430,91 @@ oct 30, 2025 10:04:01 P. M. dependencies.classes.Elevator moverHacia
 INFO: [Elevador 1] Parada completada en piso 10
 oct 30, 2025 10:04:09 P. M. dependencies.classes.Elevator reset
 INFO: [Elevador 1] Elevador Reseteado
+Oct 30, 2025 10:21:26 PM dependencies.classes.Elevator agregarComando
+INFO: [Elevador 1] Agregado el comando: Dirigirse al piso 10
+Oct 30, 2025 10:21:26 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Moviéndose up hacia piso 10
+Oct 30, 2025 10:21:28 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 2
+Oct 30, 2025 10:21:30 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 3
+Oct 30, 2025 10:21:32 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 4
+Oct 30, 2025 10:21:34 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 5
+Oct 30, 2025 10:21:36 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 6
+Oct 30, 2025 10:21:38 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 7
+Oct 30, 2025 10:21:40 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 8
+Oct 30, 2025 10:21:42 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 9
+Oct 30, 2025 10:21:44 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 10
+Oct 30, 2025 10:21:44 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Llegó al piso 10
+Oct 30, 2025 10:21:46 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Parada completada en piso 10
+Oct 30, 2025 10:24:27 PM dependencies.classes.Elevator agregarComando
+INFO: [Elevador 1] Agregado el comando: Dirigirse al piso 5
+Oct 30, 2025 10:24:28 PM dependencies.classes.Elevator agregarComando
+INFO: [Elevador 1] Agregado el comando: Dirigirse al piso 3
+Oct 30, 2025 10:24:28 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Moviéndose up hacia piso 5
+Oct 30, 2025 10:24:28 PM dependencies.classes.Elevator agregarComando
+INFO: [Elevador 1] Agregado el comando: Dirigirse al piso 7
+Oct 30, 2025 10:24:29 PM dependencies.classes.Elevator agregarComando
+INFO: [Elevador 1] Agregado el comando: Dirigirse al piso 2
+Oct 30, 2025 10:24:30 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 2
+Oct 30, 2025 10:24:32 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 3
+Oct 30, 2025 10:24:34 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 4
+Oct 30, 2025 10:24:36 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 5
+Oct 30, 2025 10:24:36 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Llegó al piso 5
+Oct 30, 2025 10:24:38 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Parada completada en piso 5
+Oct 30, 2025 10:24:38 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Moviéndose down hacia piso 3
+Oct 30, 2025 10:24:40 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 4
+Oct 30, 2025 10:24:42 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 3
+Oct 30, 2025 10:24:42 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Llegó al piso 3
+Oct 30, 2025 10:24:44 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Parada completada en piso 3
+Oct 30, 2025 10:24:44 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Moviéndose up hacia piso 7
+Oct 30, 2025 10:24:46 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 4
+Oct 30, 2025 10:24:48 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 5
+Oct 30, 2025 10:24:50 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 6
+Oct 30, 2025 10:24:52 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 7
+Oct 30, 2025 10:24:52 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Llegó al piso 7
+Oct 30, 2025 10:24:54 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Parada completada en piso 7
+Oct 30, 2025 10:24:54 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Moviéndose down hacia piso 2
+Oct 30, 2025 10:24:56 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 6
+Oct 30, 2025 10:24:58 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 5
+Oct 30, 2025 10:25:00 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 4
+Oct 30, 2025 10:25:02 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 3
+Oct 30, 2025 10:25:04 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Piso actual: 2
+Oct 30, 2025 10:25:04 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Llegó al piso 2
+Oct 30, 2025 10:25:06 PM dependencies.classes.Elevator moverHacia
+INFO: [Elevador 1] Parada completada en piso 2
