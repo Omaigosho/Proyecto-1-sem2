@@ -1,15 +1,25 @@
 package dependencies.classes;
 
 public abstract class BaseElevator implements Runnable {
+    //Amigos, recuerdense de agregar el nombre de las variables donde se utilizen a como estan aqui.
     protected int id;
-    protected int pisoActual;
-    protected String direccion;
-    protected boolean activo = true;
+    protected int pisoElevador;
 
-    public abstract void agregarComando(int piso);
+    protected String direccionElevador;
+    protected boolean isActive = true;
+
+    public abstract void agregarComando(int numPiso);
     public abstract void reset();
 
-    public int getId() { return id; }
-    public int getPisoActual() { return pisoActual; }
-    public String getDireccion() { return direccion; }
+    public int getId() { 
+        return id; 
+    }
+
+    public int getPisoActual() { 
+        return pisoElevador; 
+    }
+
+    public String getDireccion() { 
+        return direccionElevador; 
+    }
 }

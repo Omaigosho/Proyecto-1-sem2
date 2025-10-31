@@ -12,7 +12,16 @@ public class ConfigSimulador{
         this.tiempoEspera = tiempoEspera;
     }
 
-    public int getNumPisos() { return numPisos; }
-    public int getTiempoMovimiento() { return tiempoMovimiento; }
-    public int getTiempoEspera() { return tiempoEspera; }
+    public int getNumPisos() { 
+        return numPisos; 
+    }
+
+    public int getTiempoMovimiento() { 
+        return tiempoMovimiento; 
+    }
+
+    public int getTiempoEspera() { 
+        return tiempoEspera; 
+    }
+    
 }
