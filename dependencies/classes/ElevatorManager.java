@@ -22,6 +22,7 @@ public class ElevatorManager implements Runnable {
         }
     }
     
+    //setters
     public void agregarRequest(ComandoElevador Request) {
         requests.offer(Request);
         logger.info("[El Admin] Nueva solicitud: " + Request);
@@ -35,6 +36,7 @@ public class ElevatorManager implements Runnable {
         }
     }
     
+    //getters
     private Elevator elegirElevador(int piso, String direccion) {
         Elevator ElevChoose = null;
         int menorRecorrido = Integer.MAX_VALUE;
@@ -52,6 +54,8 @@ public class ElevatorManager implements Runnable {
         return elevadores;
     }
 
+
+    //¡Epsilon!, ¿Está bien esto?
     public void run(){
         while(true){
             ComandoElevador Request = requests.poll();
