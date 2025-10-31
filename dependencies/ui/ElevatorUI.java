@@ -1,5 +1,4 @@
 package dependencies.ui;
-
 import dependencies.classes.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -28,6 +27,7 @@ public class ElevatorUI extends JFrame {
         mostrarPanelConfiguracion();
     }
 
+    //Primer Panel-pedimos del usuario
     private void mostrarPanelConfiguracion() {
         JPanel panelConfig = new JPanel(new GridLayout(5, 2, 10, 10));
         panelConfig.setBorder(BorderFactory.createEmptyBorder(30, 80, 30, 80));
@@ -62,7 +62,7 @@ public class ElevatorUI extends JFrame {
         add(lblTitulo, BorderLayout.NORTH);
         add(panelConfig, BorderLayout.CENTER);
 
-        btnIniciar.addActionListener(e -> {
+        btnIniciar.addActionListener(e -> { //chicos, esto es lo que nos faltaba, para recibir del usuario
             try {
                 int numElevadores = Integer.parseInt(txtNumElevadores.getText());
                 int numPisos = Integer.parseInt(txtNumPisos.getText());
@@ -122,6 +122,7 @@ public class ElevatorUI extends JFrame {
         timer.start();
     }
 
+    // Este es el panel principal de los elevadores muchá
     private JPanel crearPanelControles() {
         JPanel panelControles = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
         panelControles.setBackground(new Color(240, 248, 255));
@@ -187,6 +188,7 @@ public class ElevatorUI extends JFrame {
                 "Información", JOptionPane.INFORMATION_MESSAGE);
         });
 
+        //EPSILON! Ayuda con el botón de cargar porfaaa
         btnCargar.addActionListener(e -> {
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Seleccionar archivo de peticiones");

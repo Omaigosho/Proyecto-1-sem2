@@ -19,7 +19,6 @@ public class LectorDePeticiones {
                     lista.add(new ComandoElevador(piso, direccion));
                 }
             }
-            sc.close();
         }
         catch(Exception e){
             System.out.println("Error al leer el archivo: " + e.getMessage());

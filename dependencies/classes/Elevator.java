@@ -22,17 +22,14 @@ public class Elevator extends BaseElevator {
         return colaComandos; 
     }
 
-    @Override
     public int getPisoActual(){
         return this.pisoElevador;
     }
 
-    @Override
     public String getDireccion(){
         return this.direccionElevador;
     }
 
-    @Override
     public void agregarComando(int numPiso) {
         int pisos = config.getNumPisos();
         if (numPiso > 0 && numPiso <= pisos && numPiso != pisoElevador) {
@@ -43,7 +40,6 @@ public class Elevator extends BaseElevator {
         }
     }
 
-    @Override
     public void reset() {
         colaComandos.clear();
         pisoElevador = 1;
@@ -52,7 +48,6 @@ public class Elevator extends BaseElevator {
     }
 
     
-
     private void moverHacia(int destino) throws InterruptedException {
         int tiempoSleep = config.getTiempoMovimiento();
 
@@ -82,7 +77,6 @@ public class Elevator extends BaseElevator {
         lg.info("[Elevador " + id + "] Parada completada en piso " + pisoElevador);
     }
 
-    @Override
     public void run() {
         while (isActive) {
             try {

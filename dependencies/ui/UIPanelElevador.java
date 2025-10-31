@@ -1,5 +1,4 @@
 package dependencies.ui;
-
 import dependencies.classes.*;
 import javax.swing.*;
 import java.awt.*;
@@ -26,13 +25,13 @@ public class UIPanelElevador extends JPanel {
         ));
 
         lblTitulo = new JLabel("Elevador " + e.getId(), SwingConstants.CENTER);
-        lblTitulo.setFont(new Font("SansSerif", Font.BOLD, 15));
+        lblTitulo.setFont(new Font("SansSerif", Font.BOLD, 15));  //Está bien esta fuente??
         lblTitulo.setAlignmentX(CENTER_ALIGNMENT);
         lblTitulo.setForeground(new Color(25, 25, 112));
         add(lblTitulo);
 
         add(Box.createVerticalStrut(10));
-
+        
         lblPiso = new JLabel("Piso actual: " + e.getPisoActual(), SwingConstants.CENTER);
         lblPiso.setAlignmentX(CENTER_ALIGNMENT);
         lblDireccion = new JLabel("Dirección: " + e.getDireccion(), SwingConstants.CENTER);
@@ -47,7 +46,7 @@ public class UIPanelElevador extends JPanel {
         add(Box.createVerticalStrut(10));
         add(new JSeparator());
 
-        // Botones de pisos (de mayor a menor)
+        // Acá están los botones-- YA NO LE MUEVAN
         for (int i = config.getNumPisos(); i >= 1; i--) {
             int piso = i;
             JButton btn = new JButton("Ir al piso " + piso);
