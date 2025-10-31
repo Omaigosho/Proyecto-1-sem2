@@ -1,0 +1,86 @@
+oct 30, 2025 6:54:35 A. M. dependencies.classes.Elevator reset
+INFO: [Elevador 3] Reset completado
+oct 30, 2025 7:53:10 P. M. dependencies.classes.Elevator agregarComando
+INFO: [Elevador 3] Nuevo comando agregado: ir al piso 2
+oct 30, 2025 7:53:10 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Moviéndose up hacia piso 2
+oct 30, 2025 7:53:11 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Piso actual: 2
+oct 30, 2025 7:53:11 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Llegó al piso 2
+oct 30, 2025 7:53:13 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Parada completada en piso 2
+oct 30, 2025 7:53:53 P. M. dependencies.classes.Elevator agregarComando
+INFO: [Elevador 3] Nuevo comando agregado: ir al piso 7
+oct 30, 2025 7:53:54 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Moviéndose up hacia piso 7
+oct 30, 2025 7:53:55 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Piso actual: 3
+oct 30, 2025 7:53:56 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Piso actual: 4
+oct 30, 2025 7:53:57 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Piso actual: 5
+oct 30, 2025 7:53:58 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Piso actual: 6
+oct 30, 2025 7:53:59 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Piso actual: 7
+oct 30, 2025 7:53:59 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Llegó al piso 7
+oct 30, 2025 7:54:01 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Parada completada en piso 7
+oct 30, 2025 8:18:42 P. M. dependencies.classes.Elevator reset
+INFO: [Elevador 3] Reset completado
+oct 30, 2025 8:22:25 P. M. dependencies.classes.Elevator reset
+INFO: [Elevador 3] Reset completado
+oct 30, 2025 8:29:29 P. M. dependencies.classes.Elevator reset
+INFO: [Elevador 3] Reset completado
+oct 30, 2025 8:53:45 P. M. dependencies.classes.Elevator reset
+INFO: [Elevador 3] Reset completado
+oct 30, 2025 8:56:42 P. M. dependencies.classes.Elevator reset
+INFO: [Elevador 3] Reset completado
+oct 30, 2025 9:03:38 P. M. dependencies.classes.Elevator reset
+INFO: [Elevador 3] Reset completado
+oct 30, 2025 9:04:31 P. M. dependencies.classes.Elevator reset
+INFO: [Elevador 3] Reset completado
+oct 30, 2025 9:17:36 P. M. dependencies.classes.Elevator agregarComando
+INFO: [Elevador 3] Nuevo comando agregado: ir al piso 9
+oct 30, 2025 9:17:36 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Moviéndose up hacia piso 9
+oct 30, 2025 9:17:38 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Piso actual: 2
+oct 30, 2025 9:17:40 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Piso actual: 3
+oct 30, 2025 9:17:42 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Piso actual: 4
+oct 30, 2025 9:17:44 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Piso actual: 5
+oct 30, 2025 9:17:46 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Piso actual: 6
+oct 30, 2025 9:17:48 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Piso actual: 7
+oct 30, 2025 9:17:50 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Piso actual: 8
+oct 30, 2025 9:17:52 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Piso actual: 9
+oct 30, 2025 9:17:52 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Llegó al piso 9
+oct 30, 2025 9:17:54 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Parada completada en piso 9
+oct 30, 2025 9:18:13 P. M. dependencies.classes.Elevator agregarComando
+INFO: [Elevador 3] Nuevo comando agregado: ir al piso 5
+oct 30, 2025 9:18:13 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Moviéndose down hacia piso 5
+oct 30, 2025 9:18:15 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Piso actual: 8
+oct 30, 2025 9:18:17 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Piso actual: 7
+oct 30, 2025 9:18:19 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Piso actual: 6
+oct 30, 2025 9:18:21 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Piso actual: 5
+oct 30, 2025 9:18:21 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Llegó al piso 5
+oct 30, 2025 9:18:23 P. M. dependencies.classes.Elevator moverHacia
+INFO: [Elevador 3] Parada completada en piso 5
+oct 30, 2025 9:22:28 P. M. dependencies.classes.Elevator reset
+INFO: [Elevador 3] Reset completado
