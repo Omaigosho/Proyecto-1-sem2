@@ -4,28 +4,29 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.logging.Logger;
 
 public class ElevatorManager implements Runnable {
-    private List<Elevator> Elevadores;
-    private ConfigSimulador Config;
-    private Logger Logger;
-    Queue<ComandoElevador> Requests = new ConcurrentLinkedQueue<>();
+    private List<Elevator> elevadores;
+    private ConfigSimulador config;
+    private Logger logger;
+    private Queue<ComandoElevador> requests = new ConcurrentLinkedQueue<>();
 
     public ElevatorManager(List<Elevator> elevators, ConfigSimulador setting) {
-        this.Elevadores = elevators;
-        this.Config = setting;
-        this.Logger = LoggerFunciones.crearLogger("manager");
+        this.elevadores = elevators;
+        this.config = setting;
+        this.logger = LoggerFunciones.LogAcciones("manager");
     }
 
-//Setters Please Epsilon.
     public void ReiniciarSistema() {
         logger.info("[El admin] Reinicio general solicitado");
         for (Elevator e : elevadores){
             e.reset();
         }
     }
+    
     public void agregarRequest(ComandoElevador Request) {
         requests.offer(Request);
         logger.info("[El Admin] Nueva solicitud: " + Request);
     }
+    
     public void asignarElevador(int piso, String direccion) {
         Elevator ElevChoosedAssing = elegirElevador(piso, direccion);
         if(ElevChoosedAssing != null) {
@@ -33,12 +34,12 @@ public class ElevatorManager implements Runnable {
             logger.info("[El Admin] Asignado elevador " + ElevChoosedAssing.getId() + " al piso " + piso);
         }
     }
-//getters.
+    
     private Elevator elegirElevador(int piso, String direccion) {
         Elevator ElevChoose = null;
         int menorRecorrido = Integer.MAX_VALUE;
         for(Elevator e : elevadores) {
-            int distancia = Math.abs(cualquiera.getPisoActual() - piso);
+            int distancia = Math.abs(e.getPisoActual() - piso);
             if (distancia < menorRecorrido) {
                 menorRecorrido = distancia;
                 ElevChoose = e;
@@ -46,6 +47,7 @@ public class ElevatorManager implements Runnable {
         }
         return ElevChoose;
     }
+    
     public List<Elevator> getElevadores(){
         return elevadores;
     }

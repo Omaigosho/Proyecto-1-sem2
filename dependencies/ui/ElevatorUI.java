@@ -7,18 +7,12 @@ import java.util.List;
 import javax.swing.*;
 
 public class ElevatorUI extends JFrame {
-<<<<<<< Updated upstream
-    private final ElevatorManager manager;
-    private final ConfigSimulador config;
-    private final JTextArea areaTexto;
-=======
     private ElevatorManager manager;
     private ConfigSimulador config;
     private JPanel panelPrincipal;
     private List<UIPanelElevador> panelesElevadores = new ArrayList<>();
     private JTextField txtPisoSolicitud;
     private JComboBox<String> cmbDireccion;
->>>>>>> Stashed changes
 
     public ElevatorUI(ElevatorManager manager, ConfigSimulador config) {
         this.manager = manager;
@@ -31,65 +25,7 @@ public class ElevatorUI extends JFrame {
         getContentPane().setBackground(new Color(240, 248, 255));
         setLayout(new BorderLayout(15, 15));
 
-<<<<<<< Updated upstream
-        areaTexto = new JTextArea();
-        areaTexto.setEditable(false);
-        add(new JScrollPane(areaTexto), BorderLayout.CENTER);
-
-        JPanel controls = new JPanel();
-        JTextField pisoField = new JTextField(5);
-        String[] dictDirectiones = new String[]{
-            "up", "down"
-        };
-
-        JComboBox<String> direccionBox = new JComboBox<>(dictDirectiones);
-        JButton callBtn = new JButton("Llamar elevador");
-        JButton resetBtn = new JButton("Resetear sistema de elevadores");
-        JButton uploadBtn = new JButton("Cargar comandos");
-
-        callBtn.addActionListener((ActionEvent e) -> {
-            int piso = Integer.parseInt(pisoField.getText());
-            String dir = (String) direccionBox.getSelectedItem();
-            manager.agregarRequest(new ComandoElevador(piso, dir));
-        });
-
-        resetBtn.addActionListener(e -> manager.resetSistema());
-
-        uploadBtn.addActionListener(e -> {
-            List<ComandoElevador> cmds = CargaPeticiones.cargarDesdeArchivo("requests.txt");
-            for (ComandoElevador c : cmds) {
-                manager.agregarRequest(c);
-            }
-        });
-
-        controls.add(new JLabel("Piso:"));
-        controls.add(pisoField);
-        controls.add(new JLabel("Dirección:"));
-        controls.add(direccionBox);
-        controls.add(callBtn);
-        controls.add(resetBtn);
-        controls.add(uploadBtn);
-        add(controls, BorderLayout.SOUTH);
-
-        
-        JPanel panelElevadores = new JPanel();
-        panelElevadores.setLayout(new GridLayout(1, manager.getElevadores().size()));
-        for (Elevator e : manager.getElevadores()) {
-
-            int numeroPisos = config.getNumPisos();
-
-            UIPanelElevador panel = new UIPanelElevador(e, numeroPisos);
-            panelElevadores.add(panel);
-
-        }
-
-        add(panelElevadores, BorderLayout.EAST);
-
-        Timer estadoTimer = new Timer(500, e -> actualizarEstado());
-        estadoTimer.start();
-=======
         mostrarPanelConfiguracion();
->>>>>>> Stashed changes
     }
 
     private void mostrarPanelConfiguracion() {
@@ -108,7 +44,7 @@ public class ElevatorUI extends JFrame {
 
         JButton btnIniciar = new JButton("Iniciar Simulación");
         btnIniciar.setBackground(new Color(70, 130, 180));
-        btnIniciar.setForeground(Color.WHITE);
+        btnIniciar.setForeground(Color.BLACK);
         btnIniciar.setFocusPainted(false);
         btnIniciar.setFont(new Font("SansSerif", Font.BOLD, 14));
 
@@ -143,9 +79,9 @@ public class ElevatorUI extends JFrame {
                 }
 
                 this.manager = new ElevatorManager(elevadores, config);
+                new Thread(manager).start();
 
                 iniciarSimulacion();
-                new Thread(manager).start();
 
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(this, "Por favor ingrese valores válidos.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -167,15 +103,6 @@ public class ElevatorUI extends JFrame {
         panelPrincipal.setBackground(new Color(235, 243, 252));
 
         for (Elevator e : manager.getElevadores()) {
-<<<<<<< Updated upstream
-            sb.append("Elevador ").append(e.getId())
-              .append(" | Piso: ").append(e.getPisoActual())
-              .append(" | Dir: ").append(e.getDireccion())
-              //No entiendo porque no se imprime la cola pero si todo lo demas, ahi lo miras vos abi XDDDDD
-              .append(" | Cola: ").append(e.getColaComandos()).append("\n");
-        }
-        areaTexto.setText(sb.toString());
-=======
             UIPanelElevador panel = new UIPanelElevador(e, config, manager);
             panelesElevadores.add(panel);
             panelPrincipal.add(panel);
@@ -201,17 +128,21 @@ public class ElevatorUI extends JFrame {
 
         JLabel lblSolicitud = new JLabel("Solicitar elevador al piso:");
         txtPisoSolicitud = new JTextField(5);
-        cmbDireccion = new JComboBox<>(new String[]{"Subir", "Bajar"});
+        cmbDireccion = new JComboBox<>(new String[]{"up", "down"});
         JButton btnSolicitar = new JButton("Llamar");
-        JButton btnReset = new JButton("Resetear sistema");
+        JButton btnReset = new JButton("Reiniciar sistema");
+        JButton btnCargar = new JButton("Cargar archivo");
         JButton btnSalir = new JButton("Salir");
 
+    
         btnSolicitar.setBackground(new Color(60, 179, 113));
         btnReset.setBackground(new Color(255, 165, 0));
+        btnCargar.setBackground(new Color(100, 149, 237));
         btnSalir.setBackground(new Color(220, 20, 60));
-        btnSolicitar.setForeground(Color.WHITE);
-        btnReset.setForeground(Color.WHITE);
-        btnSalir.setForeground(Color.WHITE);
+        btnSolicitar.setForeground(Color.BLACK);
+        btnReset.setForeground(Color.BLACK);
+        btnCargar.setForeground(Color.BLACK);
+        btnSalir.setForeground(Color.BLACK);
 
         panelControles.add(lblSolicitud);
         panelControles.add(txtPisoSolicitud);
@@ -219,21 +150,60 @@ public class ElevatorUI extends JFrame {
         panelControles.add(cmbDireccion);
         panelControles.add(btnSolicitar);
         panelControles.add(btnReset);
+        panelControles.add(btnCargar);
         panelControles.add(btnSalir);
 
         btnSolicitar.addActionListener(e -> {
             try {
                 int piso = Integer.parseInt(txtPisoSolicitud.getText());
-                String direccion = cmbDireccion.getSelectedItem().toString().toLowerCase();
-                manager.asignarElevador(piso, direccion);
+                String direccion = cmbDireccion.getSelectedItem().toString();
+                
+                if (piso < 1 || piso > config.getNumPisos()) {
+                    JOptionPane.showMessageDialog(this, 
+                        "El piso debe estar entre 1 y " + config.getNumPisos(), 
+                        "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                
+                ComandoElevador cmd = new ComandoElevador(piso, direccion);
+                manager.agregarRequest(cmd);
+                
+                JOptionPane.showMessageDialog(this, 
+                    "Solicitud enviada: Piso " + piso + " (" + direccion + ")", 
+                    "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                txtPisoSolicitud.setText("");
+                
             } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(this, "Ingrese un número de piso válido.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, 
+                    "Ingrese un número de piso válido.", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
             }
         });
 
         btnReset.addActionListener(e -> {
-            manager.resetSistema();
-            JOptionPane.showMessageDialog(this, "Sistema reseteado.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            manager.ReiniciarSistema();
+            JOptionPane.showMessageDialog(this, 
+                "Sistema reiniciado.", 
+                "Información", JOptionPane.INFORMATION_MESSAGE);
+        });
+
+        btnCargar.addActionListener(e -> {
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Seleccionar archivo de peticiones");
+            int result = fileChooser.showOpenDialog(this);
+            
+            if (result == JFileChooser.APPROVE_OPTION) {
+                String filepath = fileChooser.getSelectedFile().getAbsolutePath();
+                List<ComandoElevador> comandos = LectorDePeticiones.leerArchivo(filepath);
+                
+                for (ComandoElevador cmd : comandos) {
+                    manager.agregarRequest(cmd);
+                }
+                
+                JOptionPane.showMessageDialog(this, 
+                    "Se cargaron " + comandos.size() + " peticiones del archivo.", 
+                    "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            }
         });
 
         btnSalir.addActionListener(e -> System.exit(0));
@@ -246,9 +216,9 @@ public class ElevatorUI extends JFrame {
             ElevatorUI frame = new ElevatorUI(null, null);
             frame.setVisible(true);
         });
->>>>>>> Stashed changes
     }
 }
+
 
 
 
